@@ -13,6 +13,7 @@ for (i=1; i<= 26; i++){
     player2Hand.push(val2);
     }}
 
+    
 console.log(deck);
 dealHand();
 console.log(deck);

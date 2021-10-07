@@ -1,7 +1,5 @@
-// const Player = require("./Player.js")
+const Player = require("./Player.js")
 
-require("../Player.js")
-require("../Card.js")
 const Game = function(player1,player2){
     this.player1= Player.player1
     this.player2= Player.player2
@@ -24,10 +22,26 @@ Game.prototype.deal = function(){
 
 
 
+//if cards have same value go to war mode
+function war() {
+    //if cards still have the same value, continue round and draw 4 extra cards
+    let i = 1;
+    while(player.player2Hand[i] == player.player1Hand[i]) {
+        console.log("It's a draw.. The war continues!");
+        i += 4;
+        //increase index of array and shift/push at the end
+    }
+    else if(player.player1Hand[i]>player.player2Hand[i]){
+        console.log("Player 1 wins the war!");
+        player2Hand.shift()
+
+    } else if (player.player2Hand[i]>player.player1Hand[i]) {
+        console.log("Player 2 wins the war!");
+    }
+}
+
 module.exports = Game
 
 
-
-// module.exports = Game
 
 
