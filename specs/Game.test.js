@@ -47,24 +47,24 @@ describe("Testing all outcomes of the deal function", function(){
 
 describe("Testing playRound function in game", function(){
 
-     test("Does playing round compare indexes",function(){
+     test("Does playing round compare indexes (using test arrays player 1 should win)",function(){
      const testGame2 = new Game("John","Sally")
      testGame2.playRound();
      expect(testGame2.player1.hand[0]>testGame2.player2.hand[0]).toBe(true)     
      });
 
 
-    test("Does playing round compare indexes",function(){
+    test("Does playing round compare indexes (using test arrays player 2 should lose)",function(){
         const testGame2 = new Game("John","Sally")
         testGame2.playRound();
         expect(testGame2.player2.hand[0]<testGame2.player1.hand[0]).toBe(true) 
     });  
 
-    test("Does playing round compare indexes",function(){
-        const testGame2 = new Game("John","Sally")
-        testGame2.playRound();
-        expect(testGame2.player2.hand[0]===testGame2.player1.hand[0]).toBe(true) 
-    });  
+    // test("Does playing round compare indexes (can uncomment this and change the test arrays to a tie)",function(){
+    //     const testGame2 = new Game("John","Sally")
+    //     testGame2.playRound();
+    //     expect(testGame2.player2.hand[0]===testGame2.player1.hand[0]).toBe(true) 
+    // });  
     });
 
 
@@ -77,23 +77,5 @@ describe("Testing playRound function in game", function(){
 //     expect()
 // }
 
-describe("Testing win in game", function(){
-    test("Does player 1 wining, bring their 2nd card to the top",function(){
-    const testPlayer = new Player("John")
-    testPlayer.win(1,winningPlayer=[3,4,5,6,7,8],losingPlayer=[2,3,4,5,6,7]);
-    expect(winningPlayer[0]).toBe(4) 
-    })
-
-    test("Does player 1 wining, bring player 2's 2nd card to the top",function(){
-        const testPlayer = new Player("John")
-        testPlayer.win(1,winningPlayer=[3,4,5,6,7,8],losingPlayer=[2,3,4,5,6,7]);
-        expect(losingPlayer[0]).toBe(3) 
-        })
-    test("Does player 1 wining, bring player 2's first card to the the end of their deck",function(){
-        const testPlayer = new Player("John")
-        testPlayer.win(1,winningPlayer=[3,4,5,6,7,8],losingPlayer=[2,3,4,5,6,7]);
-        expect(winningPlayer[6]).toBe(2) 
-        })
-})
 
 
