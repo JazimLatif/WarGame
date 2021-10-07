@@ -22,6 +22,19 @@ Game.prototype.deal = function(){
 // testG.deal()
 // console.log(testG.player1.hand)
 // console.log(testG.player2.hand)
+
+//Players each draw top card, game compares the two top cards and decides which is higher.
+function playRound(){
+    round = 1;
+    if (this.player1.hand[0] > this.player2.hand[0]){
+        this.player1.isWinner = true;
+    }else if (this.player2.hand [0] > this.player2.hand[0]){
+        this.player2.isWinner = true;
+    }else {
+        war();
+    }
+}
+
 //if cards have same value go to war mode
 // Game.prototype.war= function(){
 //     //if cards still have the same value, continue round and draw 4 extra cards
