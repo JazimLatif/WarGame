@@ -70,10 +70,11 @@ Game.prototype.war = function() {
         console.log("Player 2 wins the war!");
 
         player2.win(i, player2.hand, player1.hand);
+    }
         
         console.log("Player 1 number of cards: " + player1.hand.length());
         console.log("Player 2 number of cards: " + player2.hand.length());
-    }
+
 }
 
 module.exports = Game;
