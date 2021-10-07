@@ -17,10 +17,6 @@ Game.prototype.deal = function(){
         this.player2.hand.push(val2)
         }}
 
-testG = new Game        
-testG.deal()
-console.log(testG.player1.hand)
-console.log(testG.player2.hand)
 
 
 //if cards have same value go to war mode
