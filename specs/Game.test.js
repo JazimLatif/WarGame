@@ -18,7 +18,7 @@ test("See if player 1 receives half the deck (26 cards)", function(){
     expect(testGame.player1.hand.length).toBe(26)
  })
 
- test("See if player 1 receives half the deck (26 cards)", function(){
+ test("See if player 2 receives half the deck (26 cards)", function(){
     //Assure
     const testGame = new Game("John","Sally")
     testGame.deal()
