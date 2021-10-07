@@ -17,9 +17,9 @@ Game.prototype.deal = function(){
         const val2 = this.deck.splice(random2,1)[0];
         this.player2.hand.push(val2);
         }
-    // console.log("Dealing complete")
-    // console.log(this.player1 + "has " + this.player1.hand.length() + "cards");
-    // console.log(this.player2 + "has " + this.player2.hand.length() + "cards");
+     console.log("Dealing complete")
+     console.log("Player 1 has " + this.player1.hand.length + " cards");
+     console.log("Player 2 has " + this.player2.hand.length + " cards");
 }
 
 
@@ -39,16 +39,24 @@ Game.prototype.playRound  = function(){
     if (player1Card > player2Card){
         this.player1.win(1, this.player1.hand, this.player2.hand);
         console.log(" player 1 wins the round!");
+        console.log("Player 1 has " + this.player1.hand.length + " cards");
+        console.log("Player 2 has " + this.player2.hand.length + " cards");
 
     }else if (player2Card > player1Card){
 
         this.player2.win(1, this.player2.hand, this.player1.hand);
         console.log(" player 2 wins the round!");
+        console.log("Player 1 has " + this.player1.hand.length + " cards");
+        console.log("Player 2 has " + this.player2.hand.length + " cards");
 
-    }else{
-    console.log("It's a draw... the war begins!");
-    //     this.war();
     }
+    else {
+        console.log("It's a draw... the war begins!");
+         this.war();    
+         
+    }
+
+
 }
 
 
@@ -56,24 +64,32 @@ Game.prototype.playRound  = function(){
 Game.prototype.war = function() {
     //if cards still have the same value, continue round and draw 4 extra cards
     let i = 1;
-    while(player1.hand[i] == player2.hand[i]) {
-        console.log("It's a draw.. The war continues!");
-        i += 4;
+    while(this.player1.hand[i] === this.player2.hand[i]) {
+        console.log("It's a draw... The war continues!")
+        console.log("Player 1 has " + this.player1.hand.length + " cards");
+        console.log("Player 2 has " + this.player2.hand.length + " cards");
+        i+=4
+        
         //increase index of array and shift/push at the end
     }
-    if(player1.hand[i]>player2.hand[i]){
+    if(this.player1.hand[i]>this.player2.hand[i]){
         console.log("Player 1 wins the war!");
+        console.log("Player 1 has " + this.player1.hand.length + " cards");
+        console.log("Player 2 has " + this.player2.hand.length + " cards");
 
-        player1.win(i, player1.hand, player2.hand);
+        player1.win(i, this.player1.hand, this.player2.hand);
 
-    } else if (player2.hand[i] > player1.hand[i]) {
+    } else if (this.player2.hand[i] > this.player1.hand[i]) {
         console.log("Player 2 wins the war!");
+        console.log("Player 1 has " + this.player1.hand.length + " cards");
+        console.log("Player 2 has " + this.player2.hand.length + " cards");
+        
 
-        player2.win(i, player2.hand, player1.hand);
+        player2.win(i, this.player2.hand, this.player1.hand);
     }
         
-        console.log("Player 1 number of cards: " + player1.hand.length());
-        console.log("Player 2 number of cards: " + player2.hand.length());
+        console.log("Player 1 number of cards: " + this.player1.hand.length);
+        console.log("Player 2 number of cards: " + this.player2.hand.length);
 
 }
 
