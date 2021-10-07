@@ -1,45 +1,31 @@
 const Player = require("./Player.js")
 
-const Game = function(player1,player2){
-    this.player1= Player.player1
-    this.player2= Player.player2
+const Game = function(){
+    this.player1= new Player
+    this.player2= new Player
+    this.deck = [2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,11,11,11,11,12,12,12,12,13,13,13,13,14,14,14,14]
+    // 2 is the smallest value card, Jack = 11, Queen = 12, King = 13, Ace = 14
 }
 
 deck = [2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,11,11,11,11,12,12,12,12,13,13,13,13,14,14,14,14]
+// 2 is the smallest value card, Jack = 11, Queen = 12, King = 13, Ace = 14
 
-player1Hand.Player = []
-player2Hand.Player = []
 
 Game.prototype.deal = function(){
     for (i=1; i<= 26; i++){
-        const random = Math.floor(Math.random() * deck.length);
-        const val = deck.splice(random,1)[0];
-        player1Hand.push(val)
-        const random2 = Math.floor(Math.random() * deck.length);
-        const val2 = deck.splice(random2,1)[0];
-        player2Hand.push(val2)
+        const random = Math.floor(Math.random() * this.deck.length);
+        const val = this.deck.splice(random,1)[0];
+        this.player1.hand.push(val)
+        const random2 = Math.floor(Math.random() * this.deck.length);
+        const val2 = this.deck.splice(random2,1)[0];
+        this.player2.hand.push(val2)
         }}
 
-<<<<<<< HEAD
+testG = new Game        
+testG.deal()
+console.log(testG.player1.hand)
+console.log(testG.player2.hand)
 
-=======
-// testG = new Game("James","Jazim")
-// testG.deal()
-// console.log(testG.player1.hand)
-// console.log(testG.player2.hand)
-
-//Players each draw top card, game compares the two top cards and decides which is higher.
-function playRound(){
-    round = 1;
-    if (this.player1.hand[0] > this.player2.hand[0]){
-        this.player1.isWinner = true;
-    }else if (this.player2.hand [0] > this.player2.hand[0]){
-        this.player2.isWinner = true;
-    }else {
-        war();
-    }
-}
->>>>>>> db49fe8a80978b96c70a6ffcddd8556c9187fb3f
 
 //if cards have same value go to war mode
 function war() {
