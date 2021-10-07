@@ -45,11 +45,11 @@ Game.prototype.playRound  = function(){
         this.player2.win(1, this.player2.hand, this.player1.hand);
         console.log(this.player2 + " wins the round!");
 
-    // }else{
-    //     console.log("It's a draw... the war begins!");
+    }else{
+    console.log("It's a draw... the war begins!");
     //     this.war();
-    //}
-}}
+    }
+}
 
 
 //if cards have same value go to war mode
