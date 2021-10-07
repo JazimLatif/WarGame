@@ -27,8 +27,6 @@ Game.prototype.deal = function(){
 
 Game.prototype.playRound  = function(){
     console.log("Start round.");
-    this.player1.hand = [3,4,5,6,7,8]
-    this.player2.hand = [2,3,4,5,6,7]
     let player1Card = this.player1.hand[0];
     let player2Card = this.player2.hand[0];
     
@@ -73,10 +71,6 @@ Game.prototype.war = function() {
 
         player2.win(i, player2.hand, player1.hand);
     }
-        
-        console.log("Player 1 number of cards: " + player1.hand.length());
-        console.log("Player 2 number of cards: " + player2.hand.length());
-
 }
 
 module.exports = Game;
