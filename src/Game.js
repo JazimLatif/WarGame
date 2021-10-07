@@ -27,23 +27,23 @@ Game.prototype.deal = function(){
 
 Game.prototype.playRound  = function(){
     console.log("Start round.");
-    this.player1.hand = [3,4,5,6,7,8]
-    this.player2.hand = [2,3,4,5,6,7]
+    // this.player1.hand = [3,4,5,6,7,8]
+    // this.player2.hand = [2,3,4,5,6,7]
     let player1Card = this.player1.hand[0];
     let player2Card = this.player2.hand[0];
     
-    console.log(this.player1 + " card is: " + player1Card);
-    console.log(this.player2 + " card is: " + player2Card);
+    console.log("player 1 card is: " + player1Card);
+    console.log("player 2 card is: " + player2Card);
     
 
     if (player1Card > player2Card){
         this.player1.win(1, this.player1.hand, this.player2.hand);
-        console.log(this.player1 + " wins the round!");
+        console.log(" player 1 wins the round!");
 
     }else if (player2Card > player1Card){
 
         this.player2.win(1, this.player2.hand, this.player1.hand);
-        console.log(this.player2 + " wins the round!");
+        console.log(" player 2 wins the round!");
 
     }else{
     console.log("It's a draw... the war begins!");
