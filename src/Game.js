@@ -24,7 +24,7 @@ console.log(testG.player2.hand)
 
 
 //if cards have same value go to war mode
-function war() {
+Game.prototype.war = function() {
     //if cards still have the same value, continue round and draw 4 extra cards
     let i = 1;
     while(player1.hand[i] == player2.hand[i]) {
@@ -52,8 +52,4 @@ function war() {
     }
 }
 
-module.exports = Game
-
-
-
-
+module.exports = Game;
