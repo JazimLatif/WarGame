@@ -18,6 +18,16 @@ Game.prototype.deal = function(){
         }}
 
 
+Game.prototype.playRound function(){
+    if (this.player1.hand[0] > this.player2.hand[0]){
+        this.player1.isWinner = true;
+    }else if (this.player2.hand[0] > this.player1.hand[0]){
+        this.player2.isWinner = true;
+    }else{
+        this.war();
+    }
+}
+
 
 //if cards have same value go to war mode
 Game.prototype.war = function() {
