@@ -49,6 +49,8 @@ Game.prototype.playRound  = function(){
     console.log("It's a draw... the war begins!");
     //     this.war();
     }
+    console.log("Player 1 number of cards: " + player1.hand.length());
+    console.log("Player 2 number of cards: " + player2.hand.length());
 }
 
 
