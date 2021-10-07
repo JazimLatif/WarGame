@@ -21,8 +21,10 @@ Game.prototype.deal = function(){
 Game.prototype.playRound function(){
     if (this.player1.hand[0] > this.player2.hand[0]){
         this.player1.isWinner = true;
+        this.player1.win(1, this.player1.hand, this.player2.hand);
     }else if (this.player2.hand[0] > this.player1.hand[0]){
         this.player2.isWinner = true;
+        this.player2.win(1, this.player1.hand, this.player2.hand)
     }else{
         this.war();
     }
