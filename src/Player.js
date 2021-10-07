@@ -7,12 +7,8 @@ const Player = function(playerName){
 Player.prototype.win = function(numCardsWon, winningPlayerHand, losingPlayerHand) {
       for(i = 0; i <= numCardsWon; i++) {
             winningPlayerHand.push(winningPlayerHand.shift());
-            winningPlayerHand.push(losingPlayerHand[i]);
+            winningPlayerHand.push(losingPlayerHand.shift());
       }
 }
 
-Player.prototype.lose = function (numCardsLost) {
-
-}
-
-module.exports = Player
+module.exports = Player;
